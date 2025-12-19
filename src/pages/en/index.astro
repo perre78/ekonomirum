@@ -1,9 +1,74 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
-<BaseLayout lang="en" title="Apartments for workers">
-  <h1>Apartments for workers</h1>
-  <p>Housing for workers coming to Sweden from different European countries.</p>
 
-  <a href="/sv/">Svenska</a>
+<BaseLayout
+  lang="en"
+  title="Accommodation for workers in Sweden"
+  switchHref="/sv"
+  switchLabel="Svenska"
+>
+  <Fragment slot="header">
+    <h1>Furnished accommodation for workers in Sweden</h1>
+
+    <p>
+      We offer practical and furnished accommodation for workers and companies
+      temporarily working in Sweden.
+    </p>
+
+    <p>
+      The focus is on functionality, simplicity and a reliable place to stay
+      during the work period.
+    </p>
+  </Fragment>
+
+  <section>
+    <img
+      class="example-image"
+      src="https://picsum.photos/900/400?random=1"
+      alt="Exempelbild av boende"
+    />
+  </section>
+
+  <section>
+    <h2>The accommodation</h2>
+
+    <p>
+      Our accommodations are designed for everyday living and are suitable
+      for both individuals and work teams.
+    </p>
+
+    <ul>
+      <li>Bed and storage</li>
+      <li>Kitchen with basic equipment</li>
+      <li>Bathroom with shower</li>
+      <li>Internet</li>
+      <li>Laundry facilities</li>
+    </ul>
+
+    <img
+      class="example-image"
+      src="https://picsum.photos/900/400?random=2"
+      alt="Exempelbild av interiör"
+    />
+  </section>
+
+  <section>
+    <h2>About us</h2>
+
+    <p>
+      We provide accommodation for workers staying in Sweden for short or
+      longer periods. The goal is to offer a straightforward and reliable
+      housing solution.
+    </p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+
+    <p>
+      E-mail: info@example.com<br />
+      Phone: +46 XX XXX XX XX
+    </p>
+  </section>
 </BaseLayout>
