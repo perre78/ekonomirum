@@ -1,8 +1,10 @@
-// astro.config.mjs
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
+
+const isProd = process.env.NODE_ENV === "production";
 
 export default defineConfig({
-  site: 'https://perre78.github.io',
-  base: '/apartemets-site/',
-  outDir: './docs',
+  site: "https://perre78.github.io",
+  base: isProd ? "/apartemets-site/" : "/",   // <-- viktig
+  outDir: "./docs",
 });
+// https://astro.build/configuration

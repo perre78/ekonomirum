@@ -1,0 +1,219 @@
+---
+const { lang = "sv", title = "Karlstad" } = Astro.props;
+
+const base = import.meta.env.BASE_URL; // "/" lokalt, "/apartemets-site/" i prod
+const svUrl = `${base}sv/`;
+const enUrl = `${base}en/`;
+const plUrl = `${base}pl/`;
+---
+
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+
+    <style>
+      :root{
+        --bg: #0b1220;
+        --card: rgba(255,255,255,.06);
+        --card2: rgba(255,255,255,.08);
+        --text: rgba(255,255,255,.92);
+        --muted: rgba(255,255,255,.72);
+        --border: rgba(255,255,255,.14);
+        --shadow: 0 12px 40px rgba(0,0,0,.35);
+        --radius: 18px;
+        --maxw: 980px;
+      }
+
+      *{ box-sizing:border-box; }
+      body{
+        margin:0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+        color: var(--text);
+        line-height: 1.55;
+
+        /* Bakgrundsbild */
+        background:
+          linear-gradient(
+            rgba(11,18,32,0.78),
+            rgba(11,18,32,0.78)
+          ),
+          url("/img/Areal_photo_of_Karlstad.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+
+      a{ color: inherit; }
+
+      /* Sticky header */
+      .header{
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(10px);
+        background: rgba(11,18,32,.65);
+        border-bottom: 1px solid var(--border);
+      }
+      .header-inner{
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        justify-content: space-between;
+      }
+      .brand{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        text-decoration:none;
+      }
+      .dot{
+        width:10px;height:10px;border-radius:999px;
+        background: rgba(255,255,255,.85);
+        box-shadow: 0 0 0 4px rgba(255,255,255,.08);
+      }
+      .brand-title{
+        font-weight: 650;
+        letter-spacing: .2px;
+      }
+
+      .lang{
+        display:flex;
+        gap:8px;
+        align-items:center;
+      }
+      .pill{
+        text-decoration:none;
+        padding: 8px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,.04);
+      }
+      .pill[aria-current="page"]{
+        background: rgba(255,255,255,.10);
+        border-color: rgba(255,255,255,.22);
+      }
+      .pill:hover{
+        background: rgba(255,255,255,.08);
+      }
+
+      /* Page layout */
+      .wrap{
+        max-width: var(--maxw);
+        margin: 32px auto 54px;
+        padding: 28px 22px;
+
+        /* Neutral läsbar yta */
+        background: rgba(255,255,255,0.92);
+        color: #0f172a;
+
+        border-radius: 22px;
+        box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      }
+      .wrap h1,
+      .wrap h2,
+      .wrap h3{
+      color: #020617;
+      }
+
+      .wrap p,
+      .wrap li{
+      color: #334155;
+      }
+      .section{
+      margin-top: 18px;
+      background: rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 16px;
+      padding: 18px;
+      }
+
+      .hero{
+        background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+        border: 1px solid var(--border);
+        border-radius: calc(var(--radius) + 6px);
+        box-shadow: var(--shadow);
+        padding: 26px 22px;
+      }
+      h1{
+        margin:0 0 10px;
+        font-size: clamp(28px, 3.2vw, 40px);
+        line-height: 1.15;
+      }
+      p{
+        margin: 10px 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .section{
+        margin-top: 18px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px 18px;
+      }
+      h2{
+        margin: 0 0 10px;
+        font-size: 1.25rem;
+      }
+      ul{
+        margin: 10px 0 0 18px;
+        color: var(--muted);
+      }
+
+      img{
+        width: 100%;
+        height: auto;
+        display:block;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        margin-top: 14px;
+        box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      }
+
+      footer{
+        max-width: var(--maxw);
+        margin: 26px auto 0;
+        padding: 0 16px 22px;
+        color: rgba(255,255,255,.55);
+        font-size: .95rem;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a class="brand" href={lang === "sv" ? svUrl : enUrl}>
+          <span class="dot" aria-hidden="true"></span>
+          <span class="brand-title">Karlstad</span>
+        </a>
+
+        <nav class="lang" aria-label="Språk">
+          <a class="pill" href={svUrl} aria-current={lang === "sv" ? "page" : undefined}>Svenska</a>
+          <a class="pill" href={enUrl} aria-current={lang === "en" ? "page" : undefined}>English</a>
+          <a class="pill" href={plUrl} aria-current={lang === "pl" ? "page" : undefined}>Polski</a>
+        </nav>
+
+      </div>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <footer>
+      © 2025 – Uthyrning av boende för arbetare
+    </footer>
+  </body>
+</html>
