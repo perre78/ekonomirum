@@ -85,24 +85,35 @@ const plUrl = `${base}pl/`;
         letter-spacing: .2px;
       }
 
+      /* Språkknappar */
       .lang{
         display:flex;
         gap:8px;
         align-items:center;
       }
+
       .pill{
         text-decoration:none;
-        padding: 8px 10px;
+        padding: 8px 12px;
         border-radius: 999px;
         border: 1px solid var(--border);
         background: rgba(255,255,255,.04);
+        font-size: .95rem;
+        transition: background .2s ease, border-color .2s ease, transform .15s ease;
       }
+
+      /* Aktivt språk */
       .pill[aria-current="page"]{
-        background: rgba(255,255,255,.10);
-        border-color: rgba(255,255,255,.22);
+        background: rgba(255,255,255,.22);
+        border-color: rgba(255,255,255,.45);
+        font-weight: 600;
+        pointer-events: none; /* kan inte klickas */
       }
-      .pill:hover{
-        background: rgba(255,255,255,.08);
+
+      /* Hover endast på inaktiva */
+      .pill:not([aria-current="page"]):hover{
+        background: rgba(255,255,255,.10);
+        transform: translateY(-1px);
       }
 
       /* Page layout */
@@ -200,10 +211,22 @@ const plUrl = `${base}pl/`;
         </a>
 
         <nav class="lang" aria-label="Språk">
-          <a class="pill" href={svUrl} aria-current={lang === "sv" ? "page" : undefined}>Svenska</a>
-          <a class="pill" href={enUrl} aria-current={lang === "en" ? "page" : undefined}>English</a>
-          <a class="pill" href={plUrl} aria-current={lang === "pl" ? "page" : undefined}>Polski</a>
+          <a class="pill" href={svUrl} aria-current={lang === "sv" ? "page" : undefined} aria-label="Svenska">
+            <span class="flag" aria-hidden="true">🇸🇪</span>
+            <span class="label">SV</span>
+          </a>
+
+          <a class="pill" href={enUrl} aria-current={lang === "en" ? "page" : undefined} aria-label="English">
+            <span class="flag" aria-hidden="true">🇬🇧</span>
+            <span class="label">EN</span>
+          </a>
+
+          <a class="pill" href={plUrl} aria-current={lang === "pl" ? "page" : undefined} aria-label="Polski">
+            <span class="flag" aria-hidden="true">🇵🇱</span>
+            <span class="label">PL</span>
+          </a>
         </nav>
+
 
       </div>
     </header>
