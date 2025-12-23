@@ -1,5 +1,7 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <SiteLayout lang="sv" title="Uthyrning av boende för arbetare">
@@ -22,15 +24,14 @@ import SiteLayout from "../../layouts/SiteLayout.astro";
       <li>Tvättmöjligheter</li>
     </ul>
 
-    <!-- behåll din nuvarande bild-lösning här -->
-    <img src="/images/boende.jpg" alt="Exempelbild av boende" loading="lazy" />
+    <img src={`${base}img/boende.jpg`} alt="Exempelbild av boende" loading="lazy" />
   </section>
 
   <section class="section">
     <h2>Om oss</h2>
     <p>Vi hyr ut boenden till arbetare som vistas i Sverige under kortare eller längre perioder.</p>
 
-    <img src="/images/interior.jpg" alt="Exempelbild av interiör" loading="lazy" />
+    <img src={`${base}img/interior.jpg`} alt="Exempelbild av interiör" loading="lazy" />
   </section>
 
   <section class="section">

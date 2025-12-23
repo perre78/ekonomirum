@@ -1,5 +1,7 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <SiteLayout lang="pl" title="Mieszkania do wynajęcia dla pracowników">
@@ -27,8 +29,7 @@ import SiteLayout from "../../layouts/SiteLayout.astro";
       <li>Pralnia</li>
     </ul>
 
-    <!-- Zachowaj aktualną konfigurację obrazów, jeśli już ją masz -->
-    <img src="/images/boende.jpg" alt="Przykładowe zakwaterowanie" loading="lazy" />
+    <img src={`${base}img/boende.jpg`} alt="Przykładowe zakwaterowanie" loading="lazy" />
   </section>
 
   <section class="section">
@@ -38,7 +39,7 @@ import SiteLayout from "../../layouts/SiteLayout.astro";
       przez krótsze lub dłuższe okresy.
     </p>
 
-    <img src="/images/interior.jpg" alt="Przykładowe wnętrze" loading="lazy" />
+    <img src={`${base}img/interior.jpg`} alt="Przykładowe wnętrze" loading="lazy" />
   </section>
 
   <section class="section">
