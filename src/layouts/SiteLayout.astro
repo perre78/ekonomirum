@@ -139,13 +139,6 @@ const plUrl = `${base}pl/`;
       .wrap li{
       color: #334155;
       }
-      .section{
-      margin-top: 18px;
-      background: rgba(0,0,0,0.02);
-      border: 1px solid rgba(0,0,0,0.06);
-      border-radius: 16px;
-      padding: 18px;
-      }
 
       .hero{
         background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
@@ -198,7 +191,41 @@ const plUrl = `${base}pl/`;
         color: rgba(255,255,255,.55);
         font-size: .95rem;
       }
+      
+      /* Mobile-first förbättringar */
+      @media (max-width: 520px){
+      .header-inner{
+      padding: 10px 12px;
+      gap: 8px;
+      }
 
+      /* Låt språkknapparna kunna brytas snyggt om det behövs */
+      .lang{
+      gap: 6px;
+      }
+
+      /* Minska “kort”-känslan på mobil */
+      .wrap{
+      margin: 16px 10px 24px;
+      padding: 16px 14px;
+      border-radius: 16px;
+      }
+
+      /* Om du vill spara plats: dölj SV/EN/PL och kör bara flaggor på mobil */
+      .pill{
+      padding: 8px 10px;
+      }
+      .pill .label{
+      display: none;
+      }
+      }
+
+      /* Undvik hackig scroll på mobiler */
+      @media (hover: none) and (pointer: coarse){
+      body{
+      background-attachment: scroll;
+      }
+      }
     </style>
   </head>
 
