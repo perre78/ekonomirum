@@ -4,19 +4,34 @@ import SiteLayout from "../../layouts/SiteLayout.astro";
 const base = import.meta.env.BASE_URL;
 ---
 
-<SiteLayout lang="en" title="Accommodation for Workers">
+<SiteLayout 
+  lang="en" 
+  title="Furnished Apartments in Karlstad for Workers and Companies"
+  description="Furnished apartments and houses in Karlstad for workers, contractors and companies. Flexible short- and long-term accommodation."
+>
   <section class="hero">
-    <h1>Rental Apartments and Houses in Karlstad</h1>
+    <h1>Furnished apartments in Karlstad for workers and companies</h1>
     <p>
-      We offer practical and furnished accommodation for workers and companies
-      temporarily operating in Sweden. The focus is on functionality, simplicity,
-      and a safe place to stay during the working period.
+      We offer furnished apartments in Karlstad for workers and companies who need short-term or long-term accommodation.
+      Our homes are suitable for project staff, construction workers, and international employees.
     </p>
+    <h2>Accommodation for companies and project work</h2>
+    <p>
+      Our apartments are often rented by companies with staff on assignment in Karlstad.
+      The accommodation is fully furnished and move-in ready.
+    </p>
+    <h2>Advantages of our apartments</h2>
+    <ul>
+      <li>Fully furnished apartments</li>
+      <li>Short- and long-term rentals</li>
+      <li>Safe and quiet area</li>
+      <li>Close to work and services</li>
+    </ul>
   </section>
 
   <section class="section">
-    <h2>Accommodation</h2>
-    <p>Furnished Company housing / Economy rooms</p>
+    <h2>The accommodation</h2>
+    <p>Furnished corporate housing / economy rooms</p>
     <ul>
       <li>Houses</li>
       <li>Apartments</li>
@@ -28,14 +43,13 @@ const base = import.meta.env.BASE_URL;
       <img src={`${base}img/interior.jpg`} alt="Example image of interior" loading="lazy" />
     </div>
   </section>
-
-  <section class="section">
-    <h2>About Us</h2>
-    <p>We rent out accommodation to workers staying in Sweden for shorter or longer periods.</p>
-  </section>
-
+  
   <section class="section">
     <h2>Contact</h2>
+    <p>
+      Contact us for more information about availability and prices.
+      We are happy to respond in Swedish or English.
+    </p>
     <p>Email: info@example.com<br />Phone: +46 XX XXX XX XX</p>
   </section>
 </SiteLayout>

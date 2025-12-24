@@ -4,19 +4,37 @@ import SiteLayout from "../../layouts/SiteLayout.astro";
 const base = import.meta.env.BASE_URL;
 ---
 
-<SiteLayout lang="pl" title="Wynajem zakwaterowania dla pracowników">
+<SiteLayout 
+  lang="pl" 
+  title="Zakwaterowanie pracownicze Karlstad – umeblowane mieszkania"
+  description="Zakwaterowanie pracownicze w Karlstad. Umeblowane mieszkania i domy dla firm i pracowników. Wynajem krótko- i długoterminowy."
+>
   <section class="hero">
-    <h1>Wynajem mieszkań i domów w Karlstad</h1>
+    <h1>Zakwaterowanie pracownicze w Karlstad</h1>
     <p>
-      Oferujemy praktyczne i umeblowane zakwaterowanie dla pracowników oraz firm
-      tymczasowo pracujących w Szwecji. Skupiamy się na funkcjonalności,
-      prostocie oraz bezpiecznym pobycie w czasie pracy.
+      Oferujemy umeblowane mieszkania w Karlstad dla pracowników i firm,
+      które potrzebują zakwaterowania krótko- lub długoterminowego.
+      Nasze obiekty są odpowiednie m.in. dla pracowników projektowych,
+      budowlanych oraz personelu międzynarodowego.
     </p>
+    <h2>Zakwaterowanie dla firm i projektów</h2>
+    <p>
+      Nasze mieszkania są często wynajmowane przez firmy,
+      których pracownicy realizują projekty w Karlstad.
+      Zakwaterowanie jest w pełni umeblowane i gotowe do zamieszkania.
+    </p>
+    <h2>Zalety naszych mieszkań</h2>
+    <ul>
+      <li>W pełni umeblowane mieszkania</li>
+      <li>Wynajem krótko- i długoterminowy</li>
+      <li>Bezpieczna i spokojna okolica</li>
+      <li>Blisko pracy i usług</li>
+    </ul>
   </section>
 
   <section class="section">
     <h2>Zakwaterowanie</h2>
-    <p>Umeblowane mieszkania firmowe / pokoje ekonomiczne</p>
+    <p>Umeblowane zakwaterowanie firmowe / pokoje ekonomiczne</p>
     <ul>
       <li>Domy</li>
       <li>Mieszkania</li>
@@ -28,14 +46,13 @@ const base = import.meta.env.BASE_URL;
       <img src={`${base}img/interior.jpg`} alt="Przykładowe zdjęcie wnętrza" loading="lazy" />
     </div>
   </section>
-
-  <section class="section">
-    <h2>O nas</h2>
-    <p>Wynajmujemy zakwaterowanie dla pracowników przebywających w Szwecji przez krótszy lub dłuższy czas.</p>
-  </section>
-
+  
   <section class="section">
     <h2>Kontakt</h2>
+    <p>
+      Skontaktuj się z nami, aby uzyskać więcej informacji o dostępności i cenach.
+      Chętnie odpowiemy po szwedzku lub po angielsku.
+    </p>
     <p>E-mail: info@example.com<br />Telefon: +46 XX XXX XX XX</p>
   </section>
 </SiteLayout>

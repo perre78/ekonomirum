@@ -1,5 +1,9 @@
 ---
-const { lang = "sv", title = "Ekonomirum" } = Astro.props;
+const { 
+  lang = "sv", 
+  title = "Ekonomirum", 
+  description = "Default description"
+} = Astro.props;
 
 const base = import.meta.env.BASE_URL;
 const svUrl = `${base}sv/`;
@@ -12,6 +16,7 @@ const plUrl = `${base}pl/`;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
     <title>{title}</title>
 
     <style is:global>
