@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://perre78.github.io/ekonomirum/sitemap-index.xml
