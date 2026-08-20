@@ -28,6 +28,8 @@ const base = import.meta.env.BASE_URL;
     <p>
     Siūlome trumpalaikę ir ilgalaikę nuomą, pagal poreikį.
     </p>
+
+    <a class="cta" href="#contact">Susisiekite dėl apgyvendinimo</a>
   </section>
 
   <!-- OUR ACCOMMODATION -->
@@ -51,8 +53,28 @@ const base = import.meta.env.BASE_URL;
     </p>
 
     <div class="image-row">
-      <img src={`${base}img/karlstad.jpg`} loading="lazy" />
-      <img src={`${base}img/hammaro.jpg`} loading="lazy" />
+      <figure>
+        <img
+          src={`${base}img/karlstad.webp`}
+          alt="Karlstado centro vaizdas iš oro"
+          width="800"
+          height="429"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Karlstado centras</figcaption>
+      </figure>
+      <figure>
+        <img
+          src={`${base}img/hammaro.webp`}
+          alt="Hammarö pakrantės ir salyno vaizdas iš oro"
+          width="700"
+          height="450"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Hammarö pakrantė ir salynas</figcaption>
+      </figure>
     </div>
      <div class="address-list">
       <ul>
@@ -118,7 +140,7 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <!-- CONTACT / CTA -->
-  <section class="section">
+  <section class="section" id="contact">
     <h2>Kontaktai</h2>
     <p>
       Ieškote įrengto būsto Karlstade arba Hammarö – sau, šeimai ar darbuotojams?
@@ -127,16 +149,20 @@ const base = import.meta.env.BASE_URL;
 
   <div class="contact-card">
     <img
-      src="/img/christina_kontakt.png"
-      alt="Kontaktperson Christina Bjellmeus"
+      src={`${base}img/christina_kontakt.webp`}
+      alt="Christina Bjellmeus, „Ekonomirum i Karlstad“ kontaktinis asmuo"
+      width="200"
+      height="312"
+      loading="lazy"
+      decoding="async"
       class="contact-photo"
     />
 
     <div class="contact-info">
       <strong>Ekonomirum i Karlstad</strong>
       <div>Christina Bjellmeus</div>
-      <div>Telefonas: +46&nbsp;707&nbsp;594&nbsp;441</div>
-      <div>Mail: <a href="mailto:info@ekonomirum.se?subject=Užklausa">info@ekonomirum.se</a></div>
+      <div><a href="tel:+46707594441">Telefonas: +46&nbsp;707&nbsp;594&nbsp;441</a></div>
+      <div><a href="mailto:info@ekonomirum.se?subject=Užklausa">Mail: info@ekonomirum.se</a></div>
     </div>
   </div>
 

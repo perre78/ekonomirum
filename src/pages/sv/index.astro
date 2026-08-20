@@ -29,6 +29,8 @@ const base = import.meta.env.BASE_URL;
     Vi erbjuder både korttids- och långtidsuthyrning, beroende på behov.
     </p>
 
+    <a class="cta" href="#contact">Kontakta oss om boende</a>
+
   </section>
 
   <!-- VÅRA BOSTÄDER -->
@@ -54,8 +56,28 @@ const base = import.meta.env.BASE_URL;
     </p>
 
     <div class="image-row">
-      <img src={`${base}img/karlstad.jpg`} loading="lazy" />
-      <img src={`${base}img/hammaro.jpg`} loading="lazy" />
+      <figure>
+        <img
+          src={`${base}img/karlstad.webp`}
+          alt="Flygbild över centrala Karlstad"
+          width="800"
+          height="429"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Centrala Karlstad</figcaption>
+      </figure>
+      <figure>
+        <img
+          src={`${base}img/hammaro.webp`}
+          alt="Flygbild över Hammarös kust och skärgård"
+          width="700"
+          height="450"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Hammarös kust och skärgård</figcaption>
+      </figure>
     </div>
     <div class="address-list">
       <ul>
@@ -122,7 +144,7 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <!-- KONTAKT / CTA -->
-  <section class="section">
+  <section class="section" id="contact">
     <h2>Kontakt</h2>
     <p>
       Söker du ett möblerat boende i Karlstad eller Hammarö – för dig själv,
@@ -132,16 +154,20 @@ const base = import.meta.env.BASE_URL;
 
   <div class="contact-card">
     <img
-      src="/img/christina_kontakt.png"
-      alt="Kontaktperson Christina Bjellmeus"
+      src={`${base}img/christina_kontakt.webp`}
+      alt="Christina Bjellmeus, kontaktperson på Ekonomirum i Karlstad"
+      width="200"
+      height="312"
+      loading="lazy"
+      decoding="async"
       class="contact-photo"
     />
 
     <div class="contact-info">
       <strong>Ekonomirum i Karlstad</strong>
       <div>Christina Bjellmeus</div>
-      <div>Telefon: +46&nbsp;707&nbsp;594&nbsp;441</div>
-      <div>Mail: <a href="mailto:info@ekonomirum.se?subject=Förfrågan">info@ekonomirum.se</a></div>
+      <div><a href="tel:+46707594441">Telefon: +46&nbsp;707&nbsp;594&nbsp;441</a></div>
+      <div><a href="mailto:info@ekonomirum.se?subject=Förfrågan">Mail: info@ekonomirum.se</a></div>
     </div>
   </div>
 
