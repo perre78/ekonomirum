@@ -11,7 +11,19 @@ const base = import.meta.env.BASE_URL;
 >
   <!-- HERO / INTRO -->
   <section class="hero">
-    <h1>Umeblowane mieszkania w Karlstad i Hammarö</h1>
+    <div class="hero-heading">
+      <h1>Umeblowane mieszkania w Karlstad i Hammarö</h1>
+      <div class="hero-logo-frame" aria-hidden="true">
+        <img
+          class="hero-logo"
+          src={`${base}img/ekonomirum-symbol.png`}
+          alt=""
+          width="1024"
+          height="1024"
+          decoding="async"
+        />
+      </div>
+    </div>
     <p>
       Oferujemy elastyczne i przystępne cenowo umeblowane zakwaterowanie
       w Karlstad i Hammarö.

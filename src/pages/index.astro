@@ -7,10 +7,23 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 const title = "Ekonomirum | Furnished accommodation in Karlstad & Hammarö";
 const description =
   "Furnished apartments and houses in Karlstad and Hammarö. Choose your language to view details and contact information.";
+const base = import.meta.env.BASE_URL;
 ---
 
 <SiteLayout lang="root" title={title} description={description}>
-  <h1>Ekonomirum i Karlstad</h1>
+  <div class="hero-heading">
+    <h1>Ekonomirum i Karlstad</h1>
+    <div class="hero-logo-frame" aria-hidden="true">
+      <img
+        class="hero-logo"
+        src={`${base}img/ekonomirum-symbol.png`}
+        alt=""
+        width="1024"
+        height="1024"
+        decoding="async"
+      />
+    </div>
+  </div>
 
   <p>
     Furnished accommodation in Karlstad and Hammarö, Sweden.

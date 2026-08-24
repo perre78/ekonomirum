@@ -88,7 +88,8 @@ const currentYear = new Date().getFullYear();
     <meta property="og:site_name" content="Ekonomirum i Karlstad" />
     <meta name="application-name" content="Ekonomirum i Karlstad" />
     <meta name="apple-mobile-web-app-title" content="Ekonomirum i Karlstad" />
-    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="icon" type="image/png" sizes="192x192" href={`${base}favicon.png`} />
+    <link rel="apple-touch-icon" href={`${base}favicon.png`} />
     <title>{title}</title>
 
     <!-- Canonical + hreflang -->
@@ -246,6 +247,35 @@ const currentYear = new Date().getFullYear();
 
       .hero {
         padding: 6px 4px 46px;
+      }
+
+      .hero-heading {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) clamp(96px, 18vw, 170px);
+        gap: clamp(18px, 4vw, 34px);
+        align-items: start;
+        margin-bottom: 22px;
+      }
+
+      .hero-heading h1 { margin: 0; }
+
+      .hero-logo-frame {
+        position: relative;
+        justify-self: end;
+        width: 100%;
+        aspect-ratio: 1;
+        overflow: hidden;
+      }
+
+      .hero-logo {
+        position: absolute;
+        display: block;
+        top: -37%;
+        left: -66%;
+        width: 229%;
+        max-width: none;
+        height: auto;
+        mix-blend-mode: multiply;
       }
 
       .hero > p:first-of-type {
@@ -412,6 +442,10 @@ const currentYear = new Date().getFullYear();
         h1 { font-size: clamp(1.8rem, 8.5vw, 2.2rem); }
         h2 { font-size: 1.45rem; }
         .hero { padding-bottom: 34px; }
+        .hero-heading {
+          grid-template-columns: minmax(0, 1fr) clamp(82px, 21vw, 108px);
+          gap: 16px;
+        }
         .hero > p:first-of-type { font-size: 1rem; }
         .section { padding: 34px 0; }
 
