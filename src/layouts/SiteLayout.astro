@@ -25,6 +25,13 @@ const rootUrl = `${base}`;
 
 // Bygg absoluta URL:er (kräver att `site` är satt i astro.config.mjs)
 const abs = (p: string) => new URL(p, Astro.site).toString();
+const siteName = "Ekonomirum i Karlstad";
+const website = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  url: abs(rootUrl),
+};
 
 // Root-läge: använd lang="root" på ingångssidan
 const isRoot = lang === "root";
@@ -85,9 +92,10 @@ const currentYear = new Date().getFullYear();
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta property="og:site_name" content="Ekonomirum i Karlstad" />
-    <meta name="application-name" content="Ekonomirum i Karlstad" />
-    <meta name="apple-mobile-web-app-title" content="Ekonomirum i Karlstad" />
+    <meta property="og:site_name" content={siteName} />
+    <meta name="application-name" content={siteName} />
+    <meta name="apple-mobile-web-app-title" content={siteName} />
+    {isRoot && <script type="application/ld+json" set:html={JSON.stringify(website)} />}
     <link rel="icon" type="image/png" sizes="192x192" href={`${base}favicon.png`} />
     <link rel="apple-touch-icon" href={`${base}favicon.png`} />
     <title>{title}</title>
